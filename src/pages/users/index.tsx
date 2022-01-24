@@ -31,8 +31,8 @@ import { queryClient } from "../../services/queryClient";
 export default function UserList({ initialData }) {
   const [page, setPage] = useState(1)
   const { data, isLoading, isFetching, error } = useUsers(page, {
-    initialData
-  });
+   // initialData
+  }); 
 
   const isWideVersion = useBreakpointValue({
     base: false,
@@ -145,13 +145,13 @@ export default function UserList({ initialData }) {
 }
 
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const { users, totalCount } = await getUsers(1)
+// export const getServerSideProps: GetServerSideProps = async () => {
+//  // const { users, totalCount } = await getUsers(1)
 
-  return {
-    props: {
-      initialData: users, 
-      totalCount
-    }
-  }
-}
+//   return {
+//     props: {
+//       initialData: [], 
+//       totalCount: 0
+//     }
+//   }
+// }
